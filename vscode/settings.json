@@ -1,0 +1,12 @@
+{
+    // --- 1. エディタ基本設定 (Editor Basics) ---
+    "editor.tabSize": 2, // 設計意図：RubyやWeb開発の標準であるスペース2つに統一
+    "editor.insertSpaces": true, // 解説：タブ文字ではなくスペースを挿入し、環境によるズレを防止
+    "editor.formatOnSave": true, // 設計意図：保存時に自動でコードを整形し、常に「美しい状態」を維持
+    "editor.renderWhitespace": "all", // 解説：全角スペースや不要な空白を可視化し、バグを未然に防ぐ
+    // --- 2. ファイル操作 (Files) ---
+    "files.insertFinalNewline": true, // 設計意図：ファイル末尾に必ず改行を入れる（POSIX標準に準拠）
+    "files.trimTrailingWhitespace": true, // 解説：行末の不要な空白を保存時に自動削除
+    // --- 3. ユーザーインターフェース (Workbench) ---
+    "editor.minimap.enabled": false // 設計意図：画面を広く使うため、右側のミニマップを非表示
+}
