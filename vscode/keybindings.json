@@ -1,6 +1,11 @@
 // Place your key bindings in this file to override the defaults
 [
-    // ショートカットでのカーソル操作時に「 + shift 」で範囲指定可能にする。
+    // ============================================================
+    // 1. カーソル移動の拡張（Emacsライクな範囲選択）
+    // 【設計意図】ホームポジションを崩さず、Ctrlキーを用いた移動に
+    // Shiftを組み合わせることで直感的な範囲選択を実現する。
+    // 【デフォルトとの干渉】無し。
+    // ============================================================
     {
         "key": "ctrl+shift+f",
         "command": "cursorRightSelect",
@@ -30,5 +35,19 @@
         "key": "ctrl+shift+e",
         "command": "cursorEndSelect",
         "when": "textInputFocus"
+    },
+    // ============================================================
+    // 2. エディタ操作の競合回避（タブ移動）
+    // 【設計意図】標準の「Opt + Cmd + 左右矢印」が、外部アプリ
+    // 「Spectacle（ウィンドウ整頓）」と競合するため、独自のキーへ退避。
+    // 【デフォルトとの干渉】"alt+cmd+p" 大文字と小文字の保持の切り替え。
+    // ============================================================
+    {
+        "key": "alt+cmd+p", // デフォルト：大文字と小文字の保持の切り替え。
+        "command": "workbench.action.nextEditor"
+    },
+    {
+        "key": "alt+cmd+shift+p",
+        "command": "workbench.action.previousEditor"
     }
 ]
