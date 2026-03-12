@@ -8,5 +8,13 @@
     "files.insertFinalNewline": true, // 設計意図：ファイル末尾に必ず改行を入れる（POSIX標準に準拠）
     "files.trimTrailingWhitespace": true, // 解説：行末の不要な空白を保存時に自動削除
     // --- 3. ユーザーインターフェース (Workbench) ---
-    "editor.minimap.enabled": false // 設計意図：画面を広く使うため、右側のミニマップを非表示
+    "editor.minimap.enabled": false, // 設計意図：画面を広く使うため、右側のミニマップを非表示
+    // --- 4. 言語固有の設定 (Language Specific) ---
+    "[markdown]": {
+        // 設計意図：他環境との互換性（スペース2つでの改行）を維持するため、
+        // マークダウンに限って末尾の空白削除を無効（False）にする。
+        "files.trimTrailingWhitespace": false,
+        // 解説：文章作成をスムーズにするため、この言語のみ折り返しを有効にする。
+        "editor.wordWrap": "on"
+    }
 }
