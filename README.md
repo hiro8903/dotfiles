@@ -1,6 +1,6 @@
 # Dotfiles
 
-このリポジトリは、macOS 環境における開発環境（zsh, VS Code, Antigravity）の設定ファイルを一元管理・自動配置するためのオートメーションツールです。
+このリポジトリは、macOS 環境における開発環境（zsh, VS Code, Antigravity, Karabiner-Elements）の設定ファイルを一元管理・自動配置するためのオートメーションツールです。
 
 ## ✨ 特徴 (Features)
 
@@ -18,6 +18,9 @@
     - 開発ツール（Homebrew, rbenv）の初期化とパス設定
 - **`vscode/`**: VS Code の共通設定資産
     - `settings.json`, `keybindings.json` を一元管理
+- **`karabiner/`**: Karabiner-Elements の設定
+    - Ctrl + F/B/P/N を物理矢印キーに変換（Emacs風ナビゲーション）
+    - Caps Lock を Left Control へ変換
 - **`install.sh`**: 環境構築用オートメーションスクリプト
     - シンボリックリンク配置、既存設定の自動バックアップ、エラーハンドリングを実装
 - **`.gitignore`**: リポジトリのクリーン化設定

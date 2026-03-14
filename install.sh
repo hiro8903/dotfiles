@@ -35,6 +35,8 @@ DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 VSCODE_USER_DIR="$HOME/Library/Application Support/Code/User"
 # 設計意図：macOSにおける Antigravity の標準パスを定義。将来的な拡張性を考慮し変数化。
 ANTIGRAVITY_USER_DIR="$HOME/Library/Application Support/Antigravity/User"
+# 設計意図：macOSにおける Karabiner-Elements の標準パスを定義。
+KARABINER_DIR="$HOME/.config/karabiner"
 
 echo "🚀 Starting environment setup..."
 
@@ -97,6 +99,16 @@ create_link "$DOTFILES_DIR/vscode/settings.json" "$ANTIGRAVITY_USER_DIR/settings
 # 設計意図：VS Code の設定と同じ構成にする。
 echo "🔗 Linking Antigravity keybindings..."
 create_link "$DOTFILES_DIR/vscode/keybindings.json" "$ANTIGRAVITY_USER_DIR/keybindings.json"
+
+# Karabiner Elements Configuration
+# 設計意図：ディレクトリ作成失敗時も、原因となるパスを明示して Fail-fast させる。
+if [ ! -d "$KARABINER_DIR" ]; then
+    echo "📁 Creating Karabiner directory..."
+    mkdir -p "$KARABINER_DIR" || { echo "❌ Failed to create directory: $KARABINER_DIR"; exit 1; }
+fi
+
+echo "🔗 Linking Karabiner settings..."
+create_link "$DOTFILES_DIR/karabiner/karabiner.json" "$KARABINER_DIR/karabiner.json"
 
 # 全ての工程が終わったことを知らせる。
 echo "✅ All setup tasks completed successfully!"
