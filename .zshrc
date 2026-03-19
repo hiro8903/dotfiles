@@ -29,7 +29,7 @@ zstyle ':vcs_info:git:*' formats '(%b)'              # ブランチ名を (branc
 # --- 4. プロンプト設定 (Prompt) ---
 # %~: ホームからの相対パスを表示（階層が深いRails開発に対応）
 # \n: 2行構成にすることで入力スペースを確保し、視認性を向上
-# yellow: ブランチ名の強調色 
+# yellow: ブランチ名の強調色
 # cyan: ディレクトリ名の識別色
 PROMPT='%F{cyan}%~%f %F{yellow}${vcs_info_msg_0_}%f
 $ '
@@ -54,3 +54,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # rbenv: Rubyのバージョン管理を自動初期化
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+# nodenv: Node.jsのバージョン管理を自動初期化
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
