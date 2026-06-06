@@ -18,7 +18,7 @@
       "complex_modifications": {
         "rules": [
           {
-            "description": "Ctrl + F/B/P/N を物理矢印キーに変換",
+            "description": "Ctrl + F/B/P/N を物理矢印キーに変換（スプレッドシート対応版）",
             "manipulators": [
               {
                 "type": "basic",
@@ -27,6 +27,9 @@
                   "modifiers": {
                     "mandatory": [
                       "left_control"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -43,6 +46,9 @@
                   "modifiers": {
                     "mandatory": [
                       "left_control"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -59,6 +65,9 @@
                   "modifiers": {
                     "mandatory": [
                       "left_control"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -75,6 +84,9 @@
                   "modifiers": {
                     "mandatory": [
                       "left_control"
+                    ],
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
